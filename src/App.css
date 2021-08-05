@@ -1,11 +1,18 @@
 .App {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App__principal{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -15,13 +22,12 @@
 
 .App-header {
   background-color: #ECEFF1;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  
+  margin-bottom: 10rem;
+  /* align-items: center; */
+  /* justify-content: center; */  
 }
 
 .card{
@@ -29,7 +35,12 @@
   
 }
 
-.card form{
+.table__styles{
+  padding: 1rem;
+  min-height: 50vh;
+}
+
+.card > form{
   width: fit-content;
   height: fit-content;
   background-color: white;
@@ -41,26 +52,25 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.card form input,
-  label{
+.card > form input{
     border: none;
     width: 360px;
     padding: 1rem;
-    margin: 10px 0;
+    margin: 4px 0;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
      
 }
 
-.card form {
+.card > form {
   display: flex;
   align-items: center;
 }
 
-.card form input{
+.card > form input{
   text-transform: uppercase;
 }
 
-.card form button {
+.card > form button {
   width: 10rem;
   height: 3rem;
   border: none;
@@ -71,13 +81,13 @@
   cursor: pointer;
 }
 
-.card form button:hover{
+.card > form button:hover{
   border: 1px solid #3498db;
   color: #3498db;
   background-color: white;
 }
 
-.card form input:invalid{
+.card > form input:invalid{
   border: 1px tomato solid;
 }
 
@@ -89,11 +99,11 @@
   height: 400px;
 }
 
-.response span {
+.response > span {
   text-align: center;
 }
 
-span{
+.response > span{
   display: flex;
   justify-content: center;
   color: #e74c3c;
@@ -101,12 +111,12 @@ span{
   margin-bottom: 10px;
 }
 
-.response p {
+.response > p {
   color: rgba(0,0,0,0.6);
 
 }
 
-.response p:first-of-type {
+.response > p:first-of-type {
   text-align: center;
   font-size: 22px;
   background-color: white;
@@ -114,3 +124,67 @@ span{
   font-weight: 900;
   margin: 0 0 16px;
 }
+
+.nav__search, .registros{
+  margin: 2rem;
+}
+
+.nav__search > form input,
+  label{
+    border: none;
+    width: 360px;
+    padding: 1rem;
+    margin: 4px 0;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     
+}
+
+
+.nav__search  > form button {
+  width: 4rem;
+  height: 47px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+}
+
+.nav__search > form button:hover{
+  border: 1px solid #3498db;
+  color: #3498db;
+  background-color: white;
+}
+
+.nav__search > form input:invalid{
+  border: 1px tomato solid;
+}
+
+.lista__utlimos{
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.window__scroll{
+  height: 50vh;
+  min-width: 500px;
+  overflow-y: scroll;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.lista__utlimos p{
+  text-align: left;
+  margin: 0;
+  line-height: 0;
+  padding: 0.65rem 0 0 0;
+  height: 20px;
+}
+
+.lista__utlimos > p:first-child{
+  background-color: #3498db;
+  color: aliceblue;
+}
+

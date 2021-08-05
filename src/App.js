@@ -1,10 +1,16 @@
-import './App.css';
+import './index.css';
+
+import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { useMachine } from '@xstate/react'
 import McBettyMachine from './context/McBettyMachine'
 
+import Buscador from './component/Buscador'
+import Ultimos from './component/Ultimos';
+import Tabla from './component/Tabla';
 
 function App() {
+  
 
   const { handleSubmit, register, formState: { errors }} = useForm()
   const [ state, send ] = useMachine(McBettyMachine)
@@ -17,24 +23,34 @@ function App() {
       UMED: data.UMED.toUpperCase()
     }
 
-    console.log(payload)
     send("RESERVADO", { data: payload })
 
   }
 
   const { reservado } = state.context
 
+  const [ dataTabla, setDataTabla ] = useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
+         <h1>Catalogo ITA</h1>
+    
+
+      <div className="App__principal">
+      <div className="side__bar">
+            <Ultimos />
+      </div>
+      <div className="App-header">
+        {/* <nav>
+            
+        </nav> */}
         
         <div className="card">
         <h1>Generar un nuevo número</h1>
           <form onSubmit={handleSubmit(handledData)}>
             <input
               id="ALTERNO"
-              required={errors.ALTERNO}
-              { ...register("ALTERNO", { required: true })}
+              { ...register("ALTERNO", { required: false })}
               type="text"
               placeholder="Código Alterno"
               
@@ -47,18 +63,17 @@ function App() {
               placeholder="Autor"
               
             />
+            { errors.AUTOR && <small>*Obligatorio</small> }
             <input 
               id="DESCRIPCION"
-              required={errors.DESCRIPCION}
-              { ...register("DESCRIPCION", { required: true })}
+              { ...register("DESCRIPCION", { required: false })}
               type="text"
               placeholder="Agrega una Descripcion"
               
             />
             <input 
-              id="UMED"
               required={errors.UMED}
-              { ...register("UMED", { required: true })}
+              { ...register("UMED", { required: false })}
               type="text"
               placeholder="Unidad de Medida"
             />
@@ -81,9 +96,10 @@ function App() {
               <p>{`ALTERNO: ${reservado?.ALTERNO}`}</p>
           </div>
       }
-
-      {console.log(reservado)}
-      </header>
+      </div>     
+    </div>
+    <Buscador setDataTabla={setDataTabla} />
+    <Tabla dataTabla={dataTabla} />
     </div>
   );
 }
