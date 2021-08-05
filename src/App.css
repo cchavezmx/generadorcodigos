@@ -14,25 +14,103 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ECEFF1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  
+}
+
+.card{
+  padding: 0.65rem 1rem;
+  
+}
+
+.card form{
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.card form input,
+  label{
+    border: none;
+    width: 360px;
+    padding: 1rem;
+    margin: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     
+}
+
+.card form {
+  display: flex;
+  align-items: center;
+}
+
+.card form input{
+  text-transform: uppercase;
+}
+
+.card form button {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background-color: #3498db;
   color: white;
+  font-size: calc(2px + 2vmin);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.card form button:hover{
+  border: 1px solid #3498db;
+  color: #3498db;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card form input:invalid{
+  border: 1px tomato solid;
+}
+
+
+.response{
+  padding: 1rem;
+  text-align: left;
+  min-width: 400px;
+  height: 400px;
+}
+
+.response span {
+  text-align: center;
+}
+
+span{
+  display: flex;
+  justify-content: center;
+  color: #e74c3c;
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.response p {
+  color: rgba(0,0,0,0.6);
+
+}
+
+.response p:first-of-type {
+  text-align: center;
+  font-size: 22px;
+  background-color: white;
+  padding: 0.25rem;
+  font-weight: 900;
+  margin: 0 0 16px;
 }
