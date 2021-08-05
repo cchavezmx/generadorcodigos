@@ -1,7 +1,7 @@
 import { assign, createMachine } from 'xstate'
 
-// export const BaserURL = 'https://quiet-castle-61424.herokuapp.com/api/v1'
-export const BaserURL = 'http://localhost:3000/api/v1'
+export const BaserURL = 'https://quiet-castle-61424.herokuapp.com/api/v1'
+// export const BaserURL = 'http://localhost:3000/api/v1'
 
 const fetchReserva = async(ctx, event) => {
   
