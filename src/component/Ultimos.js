@@ -14,10 +14,8 @@ const Ultimos = () => {
 
   return(
     <>
-    <h1>Utimos Registros</h1>
+    <h1>Ultimos Registros</h1>
     <div className="registros window__scroll">
-      
-      <div>
         { state.matches("success")  && 
           Object.values(ultimos).map(doc => {
            return (
@@ -37,7 +35,6 @@ const Ultimos = () => {
           })
         }
       </div>
-    </div>
     </>
   )
 }

@@ -1,9 +1,16 @@
 .App {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   text-align: center;
+  overflow-x: auto;
+}
+
+.App > h1{
+  font-family: Roboto;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .App__principal{
@@ -40,7 +47,7 @@
   min-height: 50vh;
 }
 
-.card > form{
+.card form{
   width: fit-content;
   height: fit-content;
   background-color: white;
@@ -52,7 +59,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.card > form input{
+.card form input{
     border: none;
     width: 360px;
     padding: 1rem;
@@ -61,16 +68,16 @@
      
 }
 
-.card > form {
+.card form {
   display: flex;
   align-items: center;
 }
 
-.card > form input{
+.card form input{
   text-transform: uppercase;
 }
 
-.card > form button {
+.card form button {
   width: 10rem;
   height: 3rem;
   border: none;
@@ -81,13 +88,13 @@
   cursor: pointer;
 }
 
-.card > form button:hover{
+.card form button:hover{
   border: 1px solid #3498db;
   color: #3498db;
   background-color: white;
 }
 
-.card > form input:invalid{
+.card form input:invalid{
   border: 1px tomato solid;
 }
 
@@ -99,11 +106,11 @@
   height: 400px;
 }
 
-.response > span {
+.response span {
   text-align: center;
 }
 
-.response > span{
+.response span{
   display: flex;
   justify-content: center;
   color: #e74c3c;
@@ -111,12 +118,12 @@
   margin-bottom: 10px;
 }
 
-.response > p {
+.response p {
   color: rgba(0,0,0,0.6);
 
 }
 
-.response > p:first-of-type {
+.response p:first-of-type {
   text-align: center;
   font-size: 22px;
   background-color: white;
@@ -129,7 +136,7 @@
   margin: 2rem;
 }
 
-.nav__search > form input,
+.nav__search form input,
   label{
     border: none;
     width: 360px;
@@ -140,7 +147,7 @@
 }
 
 
-.nav__search  > form button {
+.nav__search  form button {
   width: 4rem;
   height: 47px;
   border: none;
@@ -150,13 +157,13 @@
   cursor: pointer;
 }
 
-.nav__search > form button:hover{
+.nav__search form button:hover{
   border: 1px solid #3498db;
   color: #3498db;
   background-color: white;
 }
 
-.nav__search > form input:invalid{
+.nav__search form input:invalid{
   border: 1px tomato solid;
 }
 
@@ -178,13 +185,59 @@
 .lista__utlimos p{
   text-align: left;
   margin: 0;
-  line-height: 0;
-  padding: 0.65rem 0 0 0;
   height: 20px;
+  
 }
 
-.lista__utlimos > p:first-child{
+.lista__utlimos p:first-child{
   background-color: #3498db;
   color: aliceblue;
 }
 
+
+@media (max-width: 60rem){
+  .App{
+     flex-direction: column;
+     justify-content: center;
+     
+  }
+
+  .card form {
+    width: 100%;
+  }
+  .card form input{
+    width: 100%;
+  }
+
+  .App__principal{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .window__scroll{
+    height: 50vh;
+    min-width: 360px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+    overflow-x: scroll;
+  }
+
+  .nav__search form input,
+    label{
+    width: 220px;
+      
+  }
+
+  .lista__utlimos{
+    width: 360px;
+  }
+
+  .lista__utlimos p {
+    overflow-x: scroll;
+  }
+
+
+  
+
+}

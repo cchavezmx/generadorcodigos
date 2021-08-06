@@ -26,7 +26,7 @@ const columns = [
 const Tabla = ({ dataTabla }) => {
   return (
     <div className="table__styles">
-      <Table dataSource={dataTabla} columns={columns} />
+      <Table dataSource={dataTabla} columns={columns} scroll={{ x: 1300 }} />
     </div>
   )
 }

@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-         <h1>Catalogo ITA</h1>
+         <h1>Catálogo ITA</h1>
       <div className="App__principal">
       <div className="side__bar">
             <Ultimos />
